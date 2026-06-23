@@ -96,6 +96,11 @@ indextts2 = "indextts.cli_v2:main"
 requires = ["hatchling >= 1.27.0"]
 build-backend = "hatchling.build"
 
+[tool.hatch.metadata]
+# Allow `pkg @ git+https://...` URL deps in project.dependencies (needed by
+# the descript-audiotools direct reference replacing the PyPI release).
+allow-direct-references = true
+
 [tool.uv]
 # Disable build isolation when building DeepSpeed from source.
 # NOTE: This is *necessary* so that DeepSpeed builds directly within our `.venv`,
